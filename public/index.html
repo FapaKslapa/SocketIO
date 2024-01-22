@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -15,15 +15,70 @@
 </head>
 
 <body>
-    <h1>Chat</h1>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-        <input id="username" autocomplete="off" placeholder="Enter username" required />
-        <!-- Campo di input per l'username -->
-        <input id="room" autocomplete="off" placeholder="Enter room name" required />
-        <input id="input" autocomplete="off" placeholder="Enter your message" required />
-        <button type="submit">Send</button>
-    </form>
+    <div class="container">
+        <br>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Chat</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary nav-link d-inline-flex p-2 rounded-3"
+                                data-bs-toggle="modal" data-bs-target="#modalAccedi">
+                                Accedi<span class="material-symbols-rounded">
+                                    person
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <div class="card card-body rounded-3">
+            <ul id="messages"></ul>
+        </div>
+        <form id="form" action="">
+            <input id="input" autocomplete="off" placeholder="Enter your message" class="form-control rounded-4"
+                required />
+            <button class="btn btn-outline-light rounded-4" type="submit">Send</button>
+        </form>
+        <!-- Modal -->
+        <div class="modal fade" id="modalAccedi" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Accedi</h1>
+                    </div>
+                    <form class="form-horizontal" id="register">
+                        <div class="modal-body">
+                            <input id="username" class="form-control rounded-3" autocomplete="off"
+                                placeholder="Enter username" required />
+                            <br>
+                            <!-- Campo di input per l'username -->
+                            <input id="room" class="form-control rounded-3" autocomplete="off"
+                                placeholder="Enter room name" required />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 <script type="module" src="./index.js"></script>
 
