@@ -30,7 +30,6 @@ io.on("connection", (socket) => {
 
   // Ascolta i messaggi di chat e li trasmette a tutti nella stessa room
   socket.on("chat message", (room, { username, message, timestamp }) => {
-    // Modifica per accettare un oggetto con username e messaggio
     io.to(room).emit("chat message", { username, message, timestamp }); // Trasmetti l'username e il messaggio
     let chat = chats.find((chat) => chat.chat === room);
     if (chat) {

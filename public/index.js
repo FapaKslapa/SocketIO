@@ -46,7 +46,6 @@ socket.on("chat message", function (message) {
 });
 
 function displayMessages() {
-  // Crea una stringa di elementi li e la assegna all'innerHTML dell'elemento messages
   messages.innerHTML = messageData
     .map(({ username, message, timestamp }) => {
       const align = username === usernameInput.value ? "me" : "others";
