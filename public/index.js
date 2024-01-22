@@ -2,12 +2,20 @@ const socket = io();
 
 const form = document.getElementById("form");
 const input = document.getElementById("input");
+const register = document.getElementById("register");
 const roomInput = document.getElementById("room");
 const usernameInput = document.getElementById("username"); // Aggiungi un campo di input per l'username
 const messages = document.getElementById("messages");
 const myModal = new bootstrap.Modal("#modalAccedi");
 myModal.show();
-form.addEventListener("submit", function (e) {
+
+register.addEventListener("submit", function (e) => {
+  e.preventDefault();
+  if (usernameInput.value) {
+    myModal.hide();
+  }
+});
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (input.value) {
     const room = roomInput.value;
