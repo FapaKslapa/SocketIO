@@ -8,18 +8,19 @@ const usernameInput = document.getElementById("username"); // Aggiungi un campo 
 const messages = document.getElementById("messages");
 const myModal = new bootstrap.Modal("#modalAccedi");
 myModal.show();
-
-register.addEventListener("submit", function (e) => {
+let room = "";
+let username = "";
+register.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (usernameInput.value) {
+  if (usernameInput.value && roomInput.value) {
+    room = roomInput.value;
+    username = usernameInput.value;
     myModal.hide();
   }
 });
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (input.value) {
-    const room = roomInput.value;
-    const username = usernameInput.value;
     const timestamp = new Date().toLocaleString("it-IT", {
       year: "2-digit",
       month: "2-digit",
